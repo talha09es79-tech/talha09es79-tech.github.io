@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6815587107027889"
-     crossorigin="anonymous"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MySmartTools — Free Online Calculators & Utilities</title>
@@ -10,679 +8,208 @@
   <meta name="keywords" content="loan calculator, compound interest, budget planner, BMI, calorie tracker, unit converter, text tools, keyword density checker, meta tag generator" />
   <meta name="author" content="Your Name or Company" />
   <link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+
   <style>
-    /* Simple responsive, clean UI */
-    :root{--bg:#f7fafc;--card:#ffffff;--muted:#6b7280;--accent:#0ea5a4}
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter,ui-sans-serif,system-ui,Arial,sans-serif;background:var(--bg);color:#0f172a}
-    header{background:linear-gradient(90deg,#06b6d4, #0ea5a4);color:white;padding:18px 20px}
-    .container{max-width:1100px;margin:22px auto;padding:0 16px}
-    .brand{font-weight:700;font-size:20px}
-    nav{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    nav a{background:rgba(255,255,255,0.12);padding:8px 12px;border-radius:8px;color:white;text-decoration:none;font-weight:600}
-    .grid{display:grid;grid-template-columns:1fr 320px;gap:20px}
-    @media(max-width:900px){.grid{grid-template-columns:1fr}.sidebar{order:2}}
-    .card{background:var(--card);border-radius:12px;padding:16px;box-shadow:0 6px 18px rgba(8,15,26,0.06)}
-    h1{font-size:20px;margin:0 0 8px}
-    h2{font-size:16px;margin:0 0 10px}
-    label{display:block;font-size:13px;color:var(--muted);margin-bottom:6px}
-    input,select,textarea{width:100%;padding:8px;border-radius:8px;border:1px solid #e6edf3;font-size:14px}
-    button{background:var(--accent);color:white;border:none;padding:10px 12px;border-radius:8px;font-weight:700;cursor:pointer}
-    small{color:var(--muted)}
-    .result{background:#0f172a;color:white;padding:12px;border-radius:8px;margin-top:12px}
-    .tools-list{display:flex;gap:8px;flex-wrap:wrap}
-    .tools-list button{background:#eef2f7;color:#0f172a;padding:8px 10px;border-radius:8px;border:1px solid #e2e8f0}
-    footer{padding:18px 0;color:var(--muted);text-align:center;margin-top:20px}
-    .ad-placeholder{background:linear-gradient(90deg,#eef2ff,#fff);border:1px dashed #cbd5e1;border-radius:8px;padding:18px;text-align:center;color:#475569;font-size:14px}
-    .muted-block{font-size:13px;color:var(--muted);margin-top:10px}
-    pre{background:#0b1220;color:#d1fae5;padding:12px;border-radius:8px;overflow:auto}
+    :root {
+      --bg: #f7fafc;
+      --card: #ffffff;
+      --muted: #6b7280;
+      --accent: #0ea5a4;
+      --header-height: 68px;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, Arial, sans-serif;
+      background: var(--bg);
+      color: #0f172a;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: linear-gradient(90deg,#06b6d4, #0ea5a4);
+      color: white;
+      padding: 18px 20px;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: var(--header-height);
+    }
+    .brand {
+      font-weight: 700;
+      font-size: 22px;
+      user-select: none;
+    }
+    nav {
+      display: flex;
+      gap: 12px;
+      flex-wrap: nowrap;
+    }
+    nav a {
+      background: rgba(255 255 255 / 0.12);
+      padding: 8px 14px;
+      border-radius: 8px;
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover, nav a:focus {
+      background: rgba(255 255 255 / 0.28);
+      outline: none;
+    }
+    main.container {
+      max-width: 1100px;
+      margin: calc(var(--header-height) + 24px) auto 40px;
+      padding: 0 16px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 6px 18px rgba(8, 15, 26, 0.06);
+      flex-grow: 1;
+      min-width: 280px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    h2 {
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    button {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    button:hover, button:focus {
+      background: #0b8181;
+      outline: none;
+    }
+    footer {
+      padding: 18px 0;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .tools-list button {
+      background: #eef2f7;
+      color: #0f172a;
+      padding: 10px 14px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      font-weight: 600;
+    }
+    .tools-list button:hover, .tools-list button:focus {
+      background: #d4f0f0;
+      outline: none;
+    }
+    .ad-placeholder {
+      background: linear-gradient(90deg,#eef2ff,#fff);
+      border: 1px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 20px;
+      text-align: center;
+      color: #475569;
+      font-size: 14px;
+      margin-top: 20px;
+    }
+    @media (max-width: 900px) {
+      nav {
+        overflow-x: auto;
+        gap: 8px;
+      }
+      main.container {
+        flex-direction: column;
+        margin-top: calc(var(--header-height) + 12px);
+      }
+    }
   </style>
+
+  <!-- Google AdSense Script -->
+  <script data-ad-client="pub-6815587107027889" async
+    src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <div style="display:flex;align-items:center;justify-content:space-between">
-        <div>
-          <div class="brand">MySmartTools</div>
-          <div style="font-size:13px;opacity:0.95">Free calculators & utility tools — instant, privacy-first</div>
-        </div>
-        <div style="text-align:right">
-          <div style="font-size:13px">Ready for AdSense — add your ad code in placeholders</div>
-        </div>
-      </div>
-      <nav style="margin-top:12px">
-        <a href="#home">Home</a>
-        <a href="#finance">Finance</a>
-        <a href="#health">Health</a>
-        <a href="#productivity">Utilities</a>
-        <a href="#seo">SEO Tools</a>
-        <a href="#about">About</a>
-        <a href="#privacy">Privacy</a>
-      </nav>
-    </div>
+  <header role="banner">
+    <div class="brand" aria-label="MySmartTools Home">MySmartTools</div>
+    <nav role="navigation" aria-label="Primary navigation">
+      <a href="index.html" aria-current="page">Home</a>
+      <a href="finance.html">Finance</a>
+      <a href="health.html">Health</a>
+      <a href="productivity.html">Utilities</a>
+      <a href="seo.html">SEO Tools</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+    </nav>
   </header>
 
-  <main class="container">
-    <div class="grid">
-      <div>
-        <!-- Main content area: hash-based pages -->
-        <div id="content"></div>
+  <main class="container" role="main">
+    <section class="card" aria-labelledby="welcome-title">
+      <h1 id="welcome-title">Welcome to MySmartTools</h1>
+      <p>Fast, privacy-first collection of handy calculators and utilities. Choose a category above to get started.</p>
+      <div class="tools-list" role="list" aria-label="Tool categories">
+        <button onclick="location.href='finance.html'">Finance Tools</button>
+        <button onclick="location.href='health.html'">Health Tools</button>
+        <button onclick="location.href='productivity.html'">Utilities</button>
+        <button onclick="location.href='seo.html'">SEO Tools</button>
       </div>
-
-      <aside class="sidebar">
-        <div class="card">
-          <h2>All Tools</h2>
-          <div class="tools-list" id="toolsMenu">
-            <!-- JS fills buttons -->
-          </div>
-          <div style="margin-top:12px">
-            <div class="ad-placeholder">Ad placeholder (Sidebar) — insert AdSense code here.</div>
-          </div>
-          <div class="muted-block">Tip: Each tool page is optimized with SEO-friendly headings. Consider creating separate HTML pages for even better SEO.</div>
-        </div>
-
-        <div style="height:18px"></div>
-
-        <div class="card">
-          <h2>Quick Actions</h2>
-          <button onclick="location.hash='#finance'">Go to Finance Tools</button>
-          <div style="height:8px"></div>
-          <button onclick="location.hash='#health'">Go to Health Tools</button>
-        </div>
-      </aside>
-    </div>
-
-    <footer>
-      <div class="container">
-        <small>&copy; <span id="year"></span> MySmartTools — Built for quick utility. Not medical or financial advice.</small>
+      <!-- Responsive AdSense responsive ad unit -->
+      <div class="ad-placeholder" aria-label="Advertisement">
+        <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="pub-6815587107027889"
+          data-ad-slot="5358296234"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
       </div>
-    </footer>
+    </section>
+
+    <section class="card" aria-labelledby="why-title" style="margin-top: 24px;">
+      <h2 id="why-title">Why these tools?</h2>
+      <ul>
+        <li>They solve common, evergreen problems people search for.</li>
+        <li>Each tool targets specific search keywords (good for SEO).</li>
+        <li>Lightweight client-side code for fast load times and privacy.</li>
+      </ul>
+    </section>
   </main>
 
+  <footer role="contentinfo">
+    <small>&copy; <span id="year"></span> MySmartTools — Built for quick utility. Not medical or financial advice.</small>
+  </footer>
+
   <script>
-    // --- MetaMask / Ethereum shim (prevents third-party scripts from throwing when MetaMask is absent) ---
-    (function(){
-      try{
-        if (typeof window.ethereum === 'undefined'){
-          console.warn('No MetaMask detected — installing safe shim to prevent errors.');
-          window.ethereum = {
-            isMetaMask: false,
-            // modern API
-            request: function(args){
-              try{
-                const method = args && args.method ? args.method : (typeof args === 'string' ? args : null);
-                switch(method){
-                  case 'eth_requestAccounts':
-                  case 'eth_accounts':
-                    // return an empty accounts array instead of throwing
-                    return Promise.resolve([]);
-                  case 'wallet_switchEthereumChain':
-                  case 'wallet_addEthereumChain':
-                    return Promise.resolve(null);
-                  default:
-                    return Promise.reject(new Error('MetaMask not installed'));
-                }
-              }catch(e){
-                return Promise.reject(e);
-              }
-            },
-            // legacy enable()
-            enable: function(){ return Promise.resolve([]); },
-            // basic event handlers are no-ops so listeners don't error
-            on: function(){},
-            removeListener: function(){},
-            // identify as shim
-            _isShim: true
-          };
-        }
-
-        // Suppress noisy unhandled rejections that mention MetaMask so they don't break UIs/tests.
-        window.addEventListener('unhandledrejection', function(ev){
-          try{
-            var reason = ev && ev.reason;
-            var msg = '';
-            if (!reason) return;
-            if (typeof reason === 'string') msg = reason;
-            else if (reason && reason.message) msg = reason.message;
-            else msg = String(reason);
-            if (msg && msg.toLowerCase().includes('metamask')){
-              // prevent the default browser logging for this specific case
-              console.warn('Suppressed unhandled rejection mentioning MetaMask:', msg);
-              ev.preventDefault && ev.preventDefault();
-            }
-          }catch(e){/* ignore */}
-        });
-      }catch(e){
-        // fail-safe: do not stop page execution
-        console.error('MetaMask shim error', e);
-      }
-    })();
-
-    </script>
-    // --- Helpers & initial setup ---
+    // Set current year dynamically
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    const tools = [
-      {id:'home', title:'Home', desc:'Welcome — quick links to all tools.'},
-      {id:'finance', title:'Finance Calculators', desc:'Loan calculator, compound interest, budget planner.'},
-      {id:'loan', title:'Loan Calculator', desc:'Monthly payment, amortization basics.'},
-      {id:'interest', title:'Compound Interest', desc:'Estimate growth of investments.'},
-      {id:'budget', title:'Budget Planner', desc:'Monthly income & expenses plan.'},
-      {id:'health', title:'Health Tools', desc:'BMI calculator, Calorie tracker (informational).'},
-      {id:'bmi', title:'BMI Calculator', desc:'Body Mass Index - not a diagnosis.'},
-      {id:'calorie', title:'Calorie Tracker', desc:'Estimate daily calorie needs.'},
-      {id:'productivity', title:'Productivity & Utilities', desc:'Text converters, unit converter, code beautifier.'},
-      {id:'text', title:'Text Converter', desc:'Uppercase, lowercase, title case.'},
-      {id:'unit', title:'Unit Converter', desc:'Length, weight, temperature.'},
-      {id:'code', title:'Code Beautifier', desc:'Simple JS/HTML indentation.'},
-      {id:'seo', title:'SEO Tools', desc:'Keyword density, Meta tag generator.'},
-      {id:'keyword', title:'Keyword Density Checker', desc:'Find frequency & density of words.'},
-      {id:'meta', title:'Meta Tag Generator', desc:'Quick meta tag builder.'},
-      {id:'about', title:'About', desc:'About & contact info.'},
-      {id:'privacy', title:'Privacy Policy', desc:'Privacy & disclaimers - required for AdSense.'}
-    ];
-
-    const toolsMenu = document.getElementById('toolsMenu');
-    tools.forEach(t=>{
-      const btn = document.createElement('button');
-      btn.textContent = t.title;
-      btn.onclick = ()=>location.hash = '#' + t.id;
-      toolsMenu.appendChild(btn);
-    });
-
-    // --- Rendering pages ---
-    function render(){
-      const hash = (location.hash || '#home').replace('#','');
-      const content = document.getElementById('content');
-      switch(hash){
-        case 'home': content.innerHTML = homePage(); break;
-        case 'finance': content.innerHTML = financeIndex(); break;
-        case 'loan': content.innerHTML = loanCalculator(); break;
-        case 'interest': content.innerHTML = compoundInterest(); break;
-        case 'budget': content.innerHTML = budgetPlanner(); break;
-        case 'health': content.innerHTML = healthIndex(); break;
-        case 'bmi': content.innerHTML = bmiCalculator(); break;
-        case 'calorie': content.innerHTML = calorieTracker(); break;
-        case 'productivity': content.innerHTML = productivityIndex(); break;
-        case 'text': content.innerHTML = textConverter(); break;
-        case 'unit': content.innerHTML = unitConverter(); break;
-        case 'code': content.innerHTML = codeBeautifier(); break;
-        case 'seo': content.innerHTML = seoIndex(); break;
-        case 'keyword': content.innerHTML = keywordDensityChecker(); break;
-        case 'meta': content.innerHTML = metaTagGenerator(); break;
-        case 'about': content.innerHTML = aboutPage(); break;
-        case 'privacy': content.innerHTML = privacyPage(); break;
-        default: content.innerHTML = notFound();
-      }
-      window.scrollTo(0,0);
-    }
-    window.addEventListener('hashchange', render);
-    render();
-
-    // --- Page templates ---
-    function homePage(){
-      return `
-        <div class="card">
-          <h1>Welcome to MySmartTools</h1>
-          <p>Fast, privacy-first collection of handy calculators and utilities. Choose a tool from the sidebar or below.</p>
-          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:12px">
-            ${['finance','health','productivity','seo'].map(s=>`<button onclick="location.hash='#${s}'">${s.charAt(0).toUpperCase()+s.slice(1)} Tools</button>`).join('')}
-          </div>
-          <div style="margin-top:16px" class="ad-placeholder">Ad placeholder (Top of content) — insert AdSense responsive unit here.</div>
-        </div>
-
-        <div style="height:12px"></div>
-        <div class="card">
-          <h2>Why these tools?</h2>
-          <ul>
-            <li>They solve common, evergreen problems people search for.</li>
-            <li>Each tool targets specific search keywords (good for SEO).</li>
-            <li>Lightweight client-side code for fast load times and privacy.</li>
-          </ul>
-        </div>
-      `;
-    }
-
-    function financeIndex(){
-      return `
-      <div class="card">
-        <h1>Finance Calculators</h1>
-        <p>Useful calculators for loans, investments, and monthly budgets.</p>
-        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-          <button onclick="location.hash='#loan'">Loan Calculator</button>
-          <button onclick="location.hash='#interest'">Compound Interest</button>
-          <button onclick="location.hash='#budget'">Budget Planner</button>
-        </div>
-      </div>
-      `;
-    }
-
-    function loanCalculator(){
-      return `
-      <div class="card">
-        <h1>Loan Calculator</h1>
-        <p>Calculate monthly payments and total interest for a fixed-rate loan.</p>
-        <label>Loan Amount (principal)</label>
-        <input id="loanAmount" type="number" value="10000" />
-        <label>Annual Interest Rate (percent)</label>
-        <input id="loanRate" type="number" step="0.01" value="7" />
-        <label>Loan Term (years)</label>
-        <input id="loanTerm" type="number" value="5" />
-        <div style="margin-top:12px"><button onclick="calcLoan()">Calculate</button></div>
-        <div id="loanResult" class="result" style="display:none"></div>
-        <div class="muted-block">Note: This calculator assumes fixed monthly payments and a fixed annual interest rate.</div>
-      </div>
-      `;
-    }
-
-    function compoundInterest(){
-      return `
-      <div class="card">
-        <h1>Compound Interest Estimator</h1>
-        <label>Initial Principal</label>
-        <input id="ciPrincipal" type="number" value="1000" />
-        <label>Annual Contribution (each period)</label>
-        <input id="ciContribution" type="number" value="100" />
-        <label>Annual Interest Rate (percent)</label>
-        <input id="ciRate" type="number" step="0.01" value="6" />
-        <label>Compounds Per Year</label>
-        <select id="ciTimes"><option value="1">1</option><option value="4">4</option><option value="12">12</option><option value="365">365</option></select>
-        <label>Years</label>
-        <input id="ciYears" type="number" value="10" />
-        <div style="margin-top:12px"><button onclick="calcCompound()">Estimate</button></div>
-        <div id="ciResult" class="result" style="display:none"></div>
-      </div>
-      `;
-    }
-
-    function budgetPlanner(){
-      return `
-      <div class="card">
-        <h1>Monthly Budget Planner</h1>
-        <label>Monthly Net Income</label>
-        <input id="inc" type="number" value="3000" />
-        <label>Housing</label>
-        <input id="housing" type="number" value="800" />
-        <label>Food</label>
-        <input id="food" type="number" value="300" />
-        <label>Transport</label>
-        <input id="transport" type="number" value="150" />
-        <label>Savings</label>
-        <input id="savings" type="number" value="200" />
-        <label>Other</label>
-        <input id="other" type="number" value="200" />
-        <div style="margin-top:12px"><button onclick="calcBudget()">Plan Budget</button></div>
-        <div id="budgetResult" class="result" style="display:none"></div>
-      </div>
-      `;
-    }
-
-    function healthIndex(){
-      return `
-      <div class="card">
-        <h1>Health Tools</h1>
-        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-          <button onclick="location.hash='#bmi'">BMI Calculator</button>
-          <button onclick="location.hash='#calorie'">Calorie Tracker</button>
-        </div>
-        <div class="muted-block" style="margin-top:12px">Disclaimer: The health tools are informational only. Not a substitute for professional medical advice.</div>
-      </div>
-      `;
-    }
-
-    function bmiCalculator(){
-      return `
-      <div class="card">
-        <h1>BMI Calculator</h1>
-        <label>Weight (kg)</label>
-        <input id="bmiWeight" type="number" value="70" />
-        <label>Height (cm)</label>
-        <input id="bmiHeight" type="number" value="170" />
-        <div style="margin-top:12px"><button onclick="calcBMI()">Calculate BMI</button></div>
-        <div id="bmiResult" class="result" style="display:none"></div>
-        <div class="muted-block">BMI is a rough indicator and does not account for muscle mass. Consult a professional for medical concerns.</div>
-      </div>
-      `;
-    }
-
-    function calorieTracker(){
-      return `
-      <div class="card">
-        <h1>Calorie Needs Estimator (Mifflin-St Jeor)</h1>
-        <label>Age (years)</label>
-        <input id="calAge" type="number" value="30" />
-        <label>Sex</label>
-        <select id="calSex"><option value="male">Male</option><option value="female">Female</option></select>
-        <label>Weight (kg)</label>
-        <input id="calWeight" type="number" value="70" />
-        <label>Height (cm)</label>
-        <input id="calHeight" type="number" value="170" />
-        <label>Activity Level</label>
-        <select id="calAct"><option value="1.2">Sedentary</option><option value="1.375">Lightly active</option><option value="1.55">Moderately active</option><option value="1.725">Very active</option></select>
-        <div style="margin-top:12px"><button onclick="calcCalories()">Estimate Calories</button></div>
-        <div id="calResult" class="result" style="display:none"></div>
-      </div>
-      `;
-    }
-
-    function productivityIndex(){
-      return `
-      <div class="card">
-        <h1>Productivity & Utility Tools</h1>
-        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-          <button onclick="location.hash='#text'">Text Converter</button>
-          <button onclick="location.hash='#unit'">Unit Converter</button>
-          <button onclick="location.hash='#code'">Code Beautifier</button>
-        </div>
-      </div>
-      `;
-    }
-
-    function textConverter(){
-      return `
-      <div class="card">
-        <h1>Text Converter</h1>
-        <label>Enter text</label>
-        <textarea id="textInput" rows="6">Hello World</textarea>
-        <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">
-          <button onclick="applyText('upper')">UPPERCASE</button>
-          <button onclick="applyText('lower')">lowercase</button>
-          <button onclick="applyText('title')">Title Case</button>
-          <button onclick="applyText('sentence')">Sentence case</button>
-          <button onclick="copyText()">Copy</button>
-        </div>
-        <div class="muted-block" style="margin-top:12px">Useful for quick formatting and cleaning text before publishing.</div>
-      </div>
-      `;
-    }
-
-    function unitConverter(){
-      return `
-      <div class="card">
-        <h1>Unit Converter</h1>
-        <label>Type</label>
-        <select id="unitType" onchange="renderUnitForm()">
-          <option value="length">Length</option>
-          <option value="weight">Weight</option>
-          <option value="temp">Temperature</option>
-        </select>
-        <div id="unitForm" style="margin-top:12px"></div>
-      </div>
-      `;
-    }
-
-    function codeBeautifier(){
-      return `
-      <div class="card">
-        <h1>Code Beautifier (Simple)</h1>
-        <label>Paste code (HTML / JS / CSS)</label>
-        <textarea id="codeInput" rows="10">&lt;div&gt;hello&lt;/div&gt;</textarea>
-        <div style="margin-top:8px"><button onclick="beautifyCode()">Beautify</button> <button onclick="copyCode()">Copy</button></div>
-        <div id="codeResult" style="margin-top:12px;display:none"><pre id="codeOut"></pre></div>
-      </div>
-      `;
-    }
-
-    function seoIndex(){
-      return `
-      <div class="card">
-        <h1>SEO Tools</h1>
-        <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-          <button onclick="location.hash='#keyword'">Keyword Density Checker</button>
-          <button onclick="location.hash='#meta'">Meta Tag Generator</button>
-        </div>
-      </div>
-      `;
-    }
-
-    function keywordDensityChecker(){
-      return `
-      <div class="card">
-        <h1>Keyword Density Checker</h1>
-        <label>Paste text</label>
-        <textarea id="kwText" rows="10">Enter your article here...</textarea>
-        <div style="margin-top:8px"><button onclick="checkDensity()">Check Density</button></div>
-        <div id="kwResult" style="margin-top:12px;display:none" class="card"></div>
-      </div>
-      `;
-    }
-
-    function metaTagGenerator(){
-      return `
-      <div class="card">
-        <h1>Meta Tag Generator</h1>
-        <label>Title</label>
-        <input id="metaTitle" value="My page title" />
-        <label>Description</label>
-        <textarea id="metaDesc" rows="4">Short page description for search engines</textarea>
-        <label>Keywords (comma separated)</label>
-        <input id="metaKeys" value="keyword1, keyword2" />
-        <div style="margin-top:8px"><button onclick="generateMeta()">Generate</button></div>
-        <div id="metaOut" style="margin-top:12px;display:none" class="card"></div>
-      </div>
-      `;
-    }
-
-    function aboutPage(){
-      return `
-      <div class="card">
-        <h1>About MySmartTools</h1>
-        <p>This single-file website provides several free utilities designed for quick use. Built to be fast, privacy-respecting, and easy to host. If you use these tools for important decisions (financial or medical), consult a licensed professional.</p>
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      </div>
-      `;
-    }
-
-    function privacyPage(){
-      return `
-      <div class="card">
-        <h1>Privacy Policy & Disclaimers</h1>
-        <p>This site does not store your inputs on the server. All calculations are performed in your browser. We do not sell personal data. Ads are served by third parties (e.g., Google AdSense). Tools related to health/finance are informational only.</p>
-        <h2>AdSense</h2>
-        <p>To use AdSense, create an account and insert your ad code into the ad-placeholder elements in the HTML. Keep an accessible Privacy Policy page — required by Google.</p>
-      </div>
-      `;
-    }
-
-    function notFound(){
-      return `<div class="card"><h1>Page not found</h1><p>The requested tool does not exist.</p></div>`;
-    }
-
-    // --- Tool logic functions ---
-    function calcLoan(){
-      const P = parseFloat(document.getElementById('loanAmount').value) || 0;
-      const r = (parseFloat(document.getElementById('loanRate').value)||0)/100/12;
-      const n = (parseFloat(document.getElementById('loanTerm').value)||0)*12;
-      if(n===0){alert('Enter term');return}
-      const monthly = r===0?P/n:(P*r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
-      const total = monthly*n;
-      const interest = total-P;
-      const el = document.getElementById('loanResult');
-      el.style.display='block';
-      el.innerHTML = `<strong>Monthly:</strong> $${monthly.toFixed(2)} &nbsp; <strong>Total payment:</strong> $${total.toFixed(2)} &nbsp; <strong>Total interest:</strong> $${interest.toFixed(2)}`;
-    }
-
-    function calcCompound(){
-      const P = parseFloat(document.getElementById('ciPrincipal').value)||0;
-      const C = parseFloat(document.getElementById('ciContribution').value)||0;
-      const r = (parseFloat(document.getElementById('ciRate').value)||0)/100;
-      const k = parseInt(document.getElementById('ciTimes').value)||1;
-      const t = parseFloat(document.getElementById('ciYears').value)||0;
-      const n = k*t;
-      const ratePer = r/k;
-      // Future value for principal
-      const fvP = P*Math.pow(1+ratePer,n);
-      // Future value of series of contributions made each period (end of period)
-      const fvC = C * ( (Math.pow(1+ratePer,n)-1) / ratePer );
-      const total = fvP + fvC;
-      const el = document.getElementById('ciResult');
-      el.style.display='block';
-      el.innerHTML = `<strong>Estimated value after ${t} years:</strong> $${total.toFixed(2)}`;
-    }
-
-    function calcBudget(){
-      const inc = parseFloat(document.getElementById('inc').value)||0;
-      const housing = parseFloat(document.getElementById('housing').value)||0;
-      const food = parseFloat(document.getElementById('food').value)||0;
-      const transport = parseFloat(document.getElementById('transport').value)||0;
-      const savings = parseFloat(document.getElementById('savings').value)||0;
-      const other = parseFloat(document.getElementById('other').value)||0;
-      const spent = housing+food+transport+savings+other;
-      const remaining = inc-spent;
-      const el = document.getElementById('budgetResult');
-      el.style.display='block';
-      el.innerHTML = `<strong>Spent:</strong> $${spent.toFixed(2)} - <strong>Remaining:</strong> $${remaining.toFixed(2)}`;
-    }
-
-    function calcBMI(){
-      const w = parseFloat(document.getElementById('bmiWeight').value)||0;
-      const h = (parseFloat(document.getElementById('bmiHeight').value)||0)/100;
-      if(h===0){alert('Enter height');return}
-      const bmi = w/(h*h);
-      let cat = '';
-      if(bmi<18.5)cat='Underweight';
-      else if(bmi<25)cat='Normal';
-      else if(bmi<30)cat='Overweight';
-      else cat='Obese';
-      const el = document.getElementById('bmiResult'); el.style.display='block';
-      el.innerHTML = `<strong>BMI:</strong> ${bmi.toFixed(1)} — ${cat}`;
-    }
-
-    function calcCalories(){
-      const age = parseFloat(document.getElementById('calAge').value)||0;
-      const sex = document.getElementById('calSex').value;
-      const w = parseFloat(document.getElementById('calWeight').value)||0;
-      const h = parseFloat(document.getElementById('calHeight').value)||0;
-      const act = parseFloat(document.getElementById('calAct').value)||1.2;
-      // Mifflin-St Jeor
-      let bmr;
-      if(sex==='male') bmr = 10*w + 6.25*h - 5*age + 5;
-      else bmr = 10*w + 6.25*h - 5*age - 161;
-      const calories = bmr*act;
-      const el = document.getElementById('calResult'); el.style.display='block';
-      el.innerHTML = `<strong>Estimated daily calories:</strong> ${Math.round(calories)} kcal`;
-    }
-
-    // Text converter
-    function applyText(mode){
-      const ta = document.getElementById('textInput');
-      let t = ta.value || '';
-      if(mode==='upper') t = t.toUpperCase();
-      if(mode==='lower') t = t.toLowerCase();
-      if(mode==='title') t = t.replace(/\w\S*/g, (w)=> w.charAt(0).toUpperCase()+w.substr(1).toLowerCase());
-      if(mode==='sentence') t = t.replace(/(^|[.!?]\s+)([a-z])/g, (m,p,c)=> p + c.toUpperCase());
-      ta.value = t;
-    }
-    function copyText(){
-      const ta = document.getElementById('textInput'); ta.select(); navigator.clipboard?.writeText(ta.value).then(()=>alert('Copied'));
-    }
-
-    // Unit converter UI + logic
-    function renderUnitForm(){
-      const type = document.getElementById('unitType').value;
-      const el = document.getElementById('unitForm');
-      if(type==='length'){
-        el.innerHTML = `
-          <label>Value</label><input id="lenValue" type="number" value="1" />
-          <label>From</label><select id="lenFrom"><option value="m">m</option><option value="km">km</option><option value="cm">cm</option><option value="in">in</option><option value="ft">ft</option></select>
-          <label>To</label><select id="lenTo"><option value="m">m</option><option value="km">km</option><option value="cm">cm</option><option value="in">in</option><option value="ft">ft</option></select>
-          <div style="margin-top:8px"><button onclick="convertLength()">Convert</button></div>
-          <div id="lenRes" style="margin-top:8px;display:none" class="result"></div>
-        `;
-      } else if(type==='weight'){
-        el.innerHTML = `
-          <label>Value</label><input id="wtValue" type="number" value="1" />
-          <label>From</label><select id="wtFrom"><option value="kg">kg</option><option value="g">g</option><option value="lb">lb</option><option value="oz">oz</option></select>
-          <label>To</label><select id="wtTo"><option value="kg">kg</option><option value="g">g</option><option value="lb">lb</option><option value="oz">oz</option></select>
-          <div style="margin-top:8px"><button onclick="convertWeight()">Convert</button></div>
-          <div id="wtRes" style="margin-top:8px;display:none" class="result"></div>
-        `;
-      } else {
-        el.innerHTML = `
-          <label>Value</label><input id="tmpValue" type="number" value="25" />
-          <label>From</label><select id="tmpFrom"><option value="C">°C</option><option value="F">°F</option><option value="K">K</option></select>
-          <label>To</label><select id="tmpTo"><option value="C">°C</option><option value="F">°F</option><option value="K">K</option></select>
-          <div style="margin-top:8px"><button onclick="convertTemp()">Convert</button></div>
-          <div id="tmpRes" style="margin-top:8px;display:none" class="result"></div>
-        `;
-      }
-    }
-    // conversions
-    function convertLength(){
-      const v=parseFloat(document.getElementById('lenValue').value)||0; const from=document.getElementById('lenFrom').value; const to=document.getElementById('lenTo').value;
-      const m = {m:1, km:1000, cm:0.01, in:0.0254, ft:0.3048};
-      const res = v * m[from] / m[to];
-      const el=document.getElementById('lenRes'); el.style.display='block'; el.innerHTML = `${v} ${from} = ${res} ${to}`;
-    }
-    function convertWeight(){
-      const v=parseFloat(document.getElementById('wtValue').value)||0; const from=document.getElementById('wtFrom').value; const to=document.getElementById('wtTo').value;
-      const kg = {kg:1,g:0.001,lb:0.45359237,oz:0.0283495231};
-      const res = v * kg[from] / kg[to];
-      const el=document.getElementById('wtRes'); el.style.display='block'; el.innerHTML = `${v} ${from} = ${res.toFixed(4)} ${to}`;
-    }
-    function convertTemp(){
-      const v=parseFloat(document.getElementById('tmpValue').value)||0; const from=document.getElementById('tmpFrom').value; const to=document.getElementById('tmpTo').value;
-      let c;
-      if(from==='C') c=v; else if(from==='F') c=(v-32)*5/9; else c=v-273.15;
-      let out;
-      if(to==='C') out=c; else if(to==='F') out=c*9/5+32; else out=c+273.15;
-      const el=document.getElementById('tmpRes'); el.style.display='block'; el.innerHTML = `${v} ${from} = ${out.toFixed(2)} ${to}`;
-    }
-
-    // Code beautifier (very basic)
-    function beautifyCode(){
-      const s = document.getElementById('codeInput').value || '';
-      // naive: replace > < with newlines for readability and indent simple xml/html
-      let out = s.replace(/>\s*</g, ">\n<");
-      out = out.replace(/\t/g,'  ');
-      document.getElementById('codeOut').textContent = out;
-      document.getElementById('codeResult').style.display='block';
-    }
-    function copyCode(){navigator.clipboard?.writeText(document.getElementById('codeOut').textContent||'').then(()=>alert('Copied'))}
-
-    // Keyword density
-    function checkDensity(){
-      const txt = document.getElementById('kwText').value || '';
-      const words = txt.toLowerCase().replace(/[^a-z0-9\s]/g,'').split(/\s+/).filter(Boolean);
-      const total = words.length;
-      const freq = {};
-      words.forEach(w=>freq[w]=(freq[w]||0)+1);
-      const arr = Object.entries(freq).sort((a,b)=>b[1]-a[1]).slice(0,30);
-      const box = document.getElementById('kwResult'); box.style.display='block';
-      box.innerHTML = `<strong>Total words:</strong> ${total}<div style="margin-top:8px"><table style='width:100%'><tr><th>Word</th><th>Count</th><th>Density</th></tr>${arr.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${((r[1]/total)*100).toFixed(2)}%</td></tr>`).join('')}</table></div>`;
-    }
-
-    // Meta generator
-    function generateMeta(){
-      const t = document.getElementById('metaTitle').value || '';
-      const d = document.getElementById('metaDesc').value || '';
-      const k = document.getElementById('metaKeys').value || '';
-      const out = `&lt;title&gt;${escapeHtml(t)}&lt;/title&gt;\n&lt;meta name=\"description\" content=\"${escapeHtml(d)}\" /&gt;\n&lt;meta name=\"keywords\" content=\"${escapeHtml(k)}\" /&gt;`;
-      const box = document.getElementById('metaOut'); box.style.display='block'; box.innerHTML = `<pre>${out}</pre>`;
-    }
-    function escapeHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')}
-
-    // Copy helpers
-    function copyTextFrom(elid){navigator.clipboard?.writeText(document.getElementById(elid).textContent||'').then(()=>alert('Copied'))}
-
-    // simple utilities
-    function copyCodeToClipboard(s){navigator.clipboard?.writeText(s).then(()=>alert('Copied'))}
-
-    // show appropriate UI when a tool page loads
-    window.addEventListener('hashchange', ()=>{
-      setTimeout(()=>{
-        const h = location.hash.replace('#','');
-        if(['unit'].includes(h)) renderUnitForm();
-        if(['text'].includes(h)){};
-      },50);
-    });
-
-    // also call once on load to render subforms
-    setTimeout(()=>{ if(location.hash.includes('#unit')) renderUnitForm(); },200);
-
+    // Load ads
+    (adsbygoogle = window.adsbygoogle || []).push({});
   </script>
-
-  <!-- IMPORTANT: Insert AdSense code snippets where the 'ad-placeholder' divs are. -->
 </body>
 </html>
